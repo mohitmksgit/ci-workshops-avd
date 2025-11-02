@@ -4,14 +4,8 @@ SITE2:
     CVP:
       hosts:
         cvp:
-        ---
-    SITE2:
-      children:
-        CVP:
-          hosts:
-              cvp:
-                ansible_host: <mississauga-day3-29-2afd2c9f-eos.topo.testdrive.arista.com>
-      ...
+          ansible_host: mississauga-day3-29-2afd2c9f-eos.topo.testdrive.arista.com
+
     SITE2_FABRIC:
       children:
         SITE2_SPINES:
@@ -24,10 +18,12 @@ SITE2:
             s2-leaf2:
             s2-leaf3:
             s2-leaf4:
+
     SITE2_FABRIC_SERVICES:
       children:
         SITE2_SPINES:
         SITE2_LEAFS:
+
     SITE2_FABRIC_PORTS:
       children:
         SITE2_SPINES:
